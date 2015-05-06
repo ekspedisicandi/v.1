@@ -1,0 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Gafata);
+html, body, #map-canvas {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Gafata', sans-serif;
+  font-weight: bold;
+}
+
+#panel {
+  position: absolute;
+  top: 10px;
+  left: 100px;
+  z-index: 5;
+  background-color: #fff;
+  padding: 10px;
+  border-left: 3px solid #0000DD;
+}

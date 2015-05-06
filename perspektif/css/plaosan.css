@@ -1,0 +1,29 @@
+html, body {
+  font-family: 'Arial Narrow', 'Century Gothic', Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #fff;
+  background-color: #101010;
+}
+
+#wrapper {
+  position: absolute;
+  left: 5%;
+  top: 20%;
+  width: 2240px;
+  height: 1080px;
+  margin-left: -350px;
+  margin-top: -300px;
+  overflow: hidden;
+}
+
+#container {
+  position: absolute;
+  width: 2840px;
+  height: 1600px;
+  left: -150px;
+  top: -100px;
+  background-image: url(../images/plaosan.jpg);
+}
+

@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!--BROWSER TITLE-->
+<title>Temple Expedition</title>
+
+<!--GOOGLE CUSTOM FONT LINK-->
+<link href='http://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/twitter.css" type="text/css" media="screen" />
+<link rel="shortcut icon" href="images/direction.png" />
+
+<!--SCRIPTS-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="js/prettyphoto.js"></script>
+<script type="text/javascript" src="js/activity.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="js/gmap3.min.js"></script>
+<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+<script type="text/javascript" src="js/jquery.animate-colors-min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+</head>
+
+<body class="single full-page">
+
+<div id="compass"><a href="targetekspedisi"><img src="../images/compass.png" /></a></div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&appId=192402377503487&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+		<div id="container"></div>
+
+
+
+<div id="gMap"></div>
+
+
+
+<div id="loading"></div>
+
+<div id="contentContainer">
+<div id="content">
+
+	<script type="text/javascript">
+	//<![CDATA[
+	jQuery.noConflict(); jQuery(document).ready(function(){  
+    	//MAP ZOOM (0 to 20)
+    	var zoomLevel = 3,
+		gMap = jQuery("#gMap"),
+		//iPad,iPhone,iPod...
+		deviceAgent = navigator.userAgent.toLowerCase(),
+		iPadiPhone = deviceAgent.match(/(iphone|ipod|ipad)/);
+		
+	//iPad Stuff
+	if (iPadiPhone) {
+		//ADD MAP CONTROLS AND POST ARROWS
+		jQuery("#footer").prepend('<div class="markerNav" title="Prev" id="prevMarker">&lsaquo;</div><div id="markers"></div><div class="markerNav" title="Next" id="nextMarker">&rsaquo;</div><div id="mapTypeContainer"><div id="mapStyleContainer"><div id="mapStyle" class="satellite"></div></div><div id="mapType" title="Map Type" class="satellite"></div></div>');
+	} else {//IF NOT iPad
+		jQuery('#zoomIn').live('click',function(){
+			zoomLevel += 1;
+			gMap.gmap3({action: 'setOptions', args:[{zoom:zoomLevel}]});
+		});
+		jQuery('#zoomOut').live('click',function(){
+			zoomLevel -= 1;
+			gMap.gmap3({action: 'setOptions', args:[{zoom:zoomLevel}]});
+		});
+		//ADD MAP CONTROLS AND POST ARROWS
+      	jQuery("#footer").prepend('<div class="markerNav" title="Prev" id="prevMarker">&lsaquo;</div><div id="markers"></div><div class="markerNav" title="Next" id="nextMarker">&rsaquo;</div>');
+    }    
+        jQuery('body').prepend("<div id='target'></div>");
+        
+        gMap.gmap3({ 
+        	action: 'init',
+            onces: {
+              bounds_changed: function(){
+              	var number = 0;
+                jQuery(this).gmap3({
+                  action:'getBounds', 
+                  callback: function (){
+//ADD MARKERS HERE - FORMAT IS AS FOLLOWS...
+//add(jQuery(this), number += 1, "NAME", "URL","ADDRESS1<br />ADDRESS2","LATITUDE","LONGITUDE", 'THUMBNAIL');
+add(jQuery(this), number += 1, "Borobudur Temple", "en/expedition/borobudur","Magelang, Jawa Tengah, Indonesia <br/><br/> Borobudur is the largest-grandest Buddhist temple in the world. Founded 800 AD during the reign of dynasty. ","-7.607873800000000000","110.203751300000020000", '<img width="95" height="95" src="images/borobudur-95x95.jpg" alt="" />');
+
+add(jQuery(this), number += 1, "Prambanan Temple", "en/expedition/prambanan","Sleman, Yogyakarta, Indonesia <br/><br/> Prambanan Temple is the largest Hindu temple in Indonesia, which was built in the 9th century AD ","-7.752023200000000000","110.491368800000030000", '<img width="95" height="95" src="images/prambanan-95x95.jpg" alt="" />');
+
+add(jQuery(this), number += 1, "Ratu Boko Temple", "ekspedisi/ratuboko","Sleman, Yogyakarta, Indonesia <br/><br/> Ratu Boko Palace is a magnificent palace complex built in the 8th century. Monastery in a peaceful hill.","-7.771527","110.490738", '<img width="95" height="95" src="images/ratuboko-95x95.jpg" alt="" />');
+
+add(jQuery(this), number += 1, "Ijo Temple", "en/expedition/ijo","Sleman, Yogyakarta, Indonesia <br/><br/> Ijo Temple is located at the high temple in Yogyakarta. Culture at the same time presenting a natural charm.","-7.783776","110.512115", '<img width="95" height="95" src="images/ijo-95x95.jpg" alt="" />');
+
+add(jQuery(this), number += 1, "Barong Temple", "en/expedition/barong","Sleman, Yogyakarta, Indonesia <br/><br/> This temple was built around the 9th century and 10th as relics of the kingdom of Mataram Medang period.","-7.775686","110.497350", '<img width="95" height="95" src="images/barong-95x95.jpg" alt="" />');
+
+add(jQuery(this), number += 1, "Kalasan Temple", "en/expedition/kalasan","Sleman, Yogyakarta, Indonesia <br/><br/> The temple has 52 stupas. Being on the side of the Yogyakarta-Solo highway, about 2 km from the temple of Prambanan.","-7.767273","110.472357", '<img width="95" height="95" src="images/kalasan-95x95.jpg" alt=""" />');
+
+add(jQuery(this), number += 1, "Sari Temple", "en/expedition/sari","Sleman, Yogyakarta, Indonesia <br/><br/> Sari Temple is a Buddhist temple built around the 8th century and 9th at the time of the Ancient Mataram Kingdom era","-7.761527","110.474274", '<img width="95" height="95" src="images/sari-95x95.jpg" alt="" />');
+
+add(jQuery(this), number += 1, "Banyunibo Temple", "en/expedition/banyunibo","Sleman, Yogyakarta, Indonesia <br/><br/> This temple was built in the 9th century in the days of Ancient Mataram Kingdom.","-7.777990","110.494077", '<img width="95" height="95" src="images/banyunibo-95x95.jpg" alt=""" />'); 
+
+add(jQuery(this), number += 1, "Sambisari Temple", "en/expedition/sambisari","Sleman, Yogyakarta, Indonesia <br/><br/> Sambisari temple is a Hindu temple (Shiva) which was built in the 9th century in the days of Ancient Mataram Kingdom.","-7.762473","110.447131", '<img width="95" height="95" src="images/sambisari-95x95.jpg" alt="" />');
+
+add(jQuery(this), number += 1, "Sewu Temple", "en/expedition/sewu","Sleman, Yogyakarta, Indonesia <br/><br/> Sewu is the second largest Buddhist temple of Borobudur. Older than Borobudur and Prambanan.","-7.743928","110.492851", '<img width="95" height="95" src="images/sewu-95x95.jpg" alt="" />');
+
+                  }
+                });
+              }
+            }
+          },{ 
+			action: 'setOptions', args:[{
+				zoom:zoomLevel,
+				scrollwheel:false,
+				disableDefaultUI:true,
+				disableDoubleClickZoom:true,
+				draggable:true,
+				mapTypeControl:false,
+				panControl:false,
+				scaleControl:false,
+				streetViewControl:false,
+				zoomControl:false,
+				//MAP TYPE: 'roadmap', 'satellite', 'hybrid'
+				mapTypeId:'roadmap'
+			}]
+		});
+        function add(jQuerythis, i, title, link, excerpt, lati, longi, img){
+          jQuerythis.gmap3({
+            action : 'addMarker',
+            lat:lati,
+            lng:longi,
+            //PIN MARKER IMAGE
+            options: {icon: new google.maps.MarkerImage('images/pin.png')},
+            events:{
+       			mouseover: function(marker){
+          			jQuerythis.css({cursor:'pointer'});
+          			jQuery('#markerTitle'+i+'').fadeIn({ duration: 200, queue: false }).animate({bottom:"32px"},{duration:200,queue:false});
+          			jQuery('.markerInfo').removeClass('activeInfo').hide();
+          			jQuery('#markerInfo'+i+'').addClass('activeInfo').show();
+          			jQuery('.marker').removeClass('activeMarker');
+          			jQuery('#marker'+i+'').addClass('activeMarker');
+      			},
+       			mouseout: function(){
+          			jQuerythis.css({cursor:'default'});
+          			jQuery('#markerTitle'+i+'').stop(true,true).fadeOut(200,function(){jQuery(this).css({bottom:"0"})});
+      			},
+      			click: function(marker){window.location = link}
+   			},
+            callback: function(marker){
+              var jQuerybutton = jQuery('<div id="marker'+i+'" class="marker"><div id="markerInfo'+i+'" class="markerInfo"><a href="'+link+'">'+img+'</a><h2><a href="'+link+'">'+title+'</a></h2><p>'+excerpt+'</p><a class="markerLink" href="'+link+'">More &rarr;</a></div></div>');
+              jQuerybutton.mouseover(function(){
+                  jQuerythis.gmap3({
+                    action:'panTo', 
+                    args:[marker.position]
+                  });
+                  jQuery("#target").stop(true,true).fadeIn(1200).delay(500).fadeOut(1200);
+               });
+              jQuery('#markers').append(jQuerybutton);
+              var numbers = jQuery(".markerInfo").length;
+              jQuery(".markerTotal span").html(numbers);
+              if(i == 1){
+              	jQuery('.marker:first-child').addClass('activeMarker').mouseover();
+              }
+              jQuerythis.gmap3({
+              	action:'addOverlay',
+              	content: '<div id="markerTitle'+i+'" class="markerTitle">'+title+'</div>',
+              	latLng: marker.getPosition()
+               });
+            }    		
+          });
+        }
+});
+//]]>
+</script>
+
+<div id="main" >
+
+	<div id="handle"></div>
+	<div id="closeBox"></div>
+		
+	<div  class="post">
+
+
+
+		<!--POST TITLE-->
+		<h2 class="posttitle">Temple Expedition</h2>
+		
+		<!--BREADCRUMB LINKS-->
+		<div><p id='postAddr'>
+            <img src="images/ekspedisicandi.jpg"><br /><br />
+				Looking for tourist destinations that are not mainstream, learn history, or seek the other side of Yogyakarta landscape?. Expedition Temple is an option.<br />
+
+				<br />
+				<!--GET DIRECTIONS LINK-->
+				<em><a target='_blank' title='Get Directions' href='blog/temple-expedition'>Read more &rarr;</a></em>
+			</p>	</div>				
+		
+		<!--IMAGE GALLERY-->
+		<div class="toggleButton closed"><span>+</span>TOP 15 Expedition Target</div>
+		<ul class="galleryBox">
+       		<li class="wrapperli"><a href="images/borobudur.jpg"><img src="images/borobudur-53x53.jpg" alt=""/></a></li>
+       		<li class="wrapperli"><a href="images/prambanan.jpg"><img src="images/prambanan-53x53.jpg" alt=""/></a></li>
+       		<li class="wrapperli"><a href="images/ratuboko.jpg"><img src="images/ratuboko-53x53.jpg" alt=""/></a></li>
+       		<li class="wrapperli"><a href="images/ijo.jpg"><img src="images/ijo-53x53.jpg" alt=""/></a></li>
+       		<li class="wrapperli"><a href="images/barong.jpg"><img src="images/barong-53x53.jpg" alt=""/></a></li>
+
+       		<li class="wrapperli"><a href="images/kalasan.jpg"><img src="images/kalasan-53x53.jpg" alt=""/></a></li>
+       		<li class="wrapperli"><a href="images/sari.jpg"><img src="images/sari-53x53.jpg" alt=""/></a></li>
+       		<li class="wrapperli"><a href="images/banyunibo.jpg"><img src="images/banyunibo-53x53.jpg" alt=""/></a></li>
+       		<li class="wrapperli"><a href="images/sambisari.jpg"><img src="images/sambisari-53x53.jpg" alt=""/></a></li>
+       		<li class="wrapperli"><a href="images/sewu.jpg"><img src="images/sewu-53x53.jpg" alt=""/></a></li>
+       		
+       		<li class="wrapperli"><a href="images/plaosan.jpg"><img src="images/plaosan-53x53.jpg" alt=""/></a></li>
+       		<li class="wrapperli"><a href="images/sojiwan.jpg"><img src="images/sojiwan-53x53.jpg" alt=""/></a></li>
+       		<li class="wrapperli"><a href="images/pawon.jpg"><img src="images/pawon-53x53.jpg" alt=""/></a></li>
+       		<li class="wrapperli"><a href="images/mendut.jpg"><img src="images/mendut-53x53.jpg" alt=""/></a></li>
+       		<li class="wrapperli"><a href="images/gebang.jpg"><img src="images/gebang-53x53.jpg" alt=""/></a></li>
+
+            <p><em><a target='_blank' title='Get Directions' href='expeditiontarget'>More &rarr;</a></em></p>
+       	</ul><!--end galleryBox-->
+
+		
+		<!--SHARE BUTTONS-->       
+       	<div class="toggleButton closed"><span>+</span>What's in this Online Page?</div>
+        <div class="clear" id="commentsection">
+			
+			<ol class="commentlist">
+				<li class="comment">
+					<div class="comment-body">
+						<div class="comment-author">
+							<img alt='' src='images/avatar.png' class='avatar avatar-32 photo'/>		
+							<cite class="fn">Explore One by one</cite> <span class="says"></span>		
+						</div>
+						<div class="commentmetadata">
+							17 August 2014 10:42 AM
+						</div>
+						<p>We collect the data in the form of historical temples in Yogyakarta and surrounding areas, maps, weather around the temple, ticket prices, and directions. This information is structured so that these temples can be explored one by one.</p>
+                        <p><em><a target='_blank' title='Get Directions' href='../sitemap'>More &rarr;</a></em></p>
+					</div>
+				</li>
+			</ol><!--end commentlist-->
+    	</div><!--end commentsection-->
+       
+       	<!--RELATED POSTS-->
+		<div id="relatedToggle" class="toggleButton"><span>+</span>Connect on Facebook and Twitter</div>
+       	<div id="tags">
+
+	<section class="pen">
+
+		<div class="widget front">
+			<div class="profile">
+				<div class="profile-picture">
+					<img src="images/icon.jpg" alt="@vsxed">
+				</div>
+				<div class="bio">
+					<a href="https://twitter.com/ekspedisicandi" target="_blank">EC <span>@ekspedisicandi</span></a>
+					<span class="text">© 2014 Tim Ekspedisi Candi<br>Indonesia</span>
+				</div>
+			</div>
+			<div class="meta">
+				<div class="btn dm"></div>
+				<a href="https://twitter.com/ekspedisicandi" target="_blank" class="info co tweets">11.3 K</a>
+				<span class="sep"></span>
+				<a href="https://twitter.com/ekspedisicandi/following" target="_blank" class="info co following">175</a>
+				<span class="sep"></span>
+				<a href="https://twitter.com/ekspedisicandi/followers" target="_blank" class="info co followers">507</a>
+			</div>
+		</div>
+	</section>
+               <br/>
+<div class="fb-follow" data-href="https://www.facebook.com/ekspedisicandi" data-width="300px" data-colorscheme="dark" data-layout="standard" data-show-faces="false"></div>
+		</div><!--end related-->
+		
+		<!--META INFO-->
+		<div id="tagsToggle" class="toggleButton"><span>+</span>What we wrote recently in a blog</div>
+       	<div id="tags">
+
+            <p><a href="blog/jadwal-kereta" rel="tag">Jadwal Kereta</a></p>
+            <p><a href="blog/currencyconverter" rel="tag">Currency Converter</a></p> 
+            <p><a href="blog/petunjuk-arah" rel="tag">Petunjuk Arah dari Yogyakarta ke Lokasi Candi</a></p> 
+            <p><a href="blog/panorama" rel="tag">360 Derajat Panorama Candi</a></p>
+            <p><a href="blog/tentang-logo" rel="tag">Tentang Logo Ekspedisi Candi</a></p> 
+            <p><a href="blog/tentang-website" rel="tag">Tentang Website Ekspedisi Candi</a></p> 
+       		<p><a href="../targetekspedisi" rel="tag">Target Ekspedisi Candi</a></p>
+       		<p><a href="blog/ekspedisi-candi" rel="tag">Memulai Ekspedisi</a></p> 
+
+       	</div><!--end tags-->
+     
+       	<!--RELATED POSTS-->
+		<div id="relatedToggle" class="toggleButton"><span>+</span>Temple Expedition Team</div>
+       	<div id="related">
+			<ul>
+			<li><a target="_blank" class="tooltip" href="https://twitter.com/faridiot" title="Ahmad Farid Mubarok"><img src="images/farid.jpg" alt=""/></a></li>
+			<li><a target="_blank" class="tooltip" href="https://twitter.com/almustafa1892" title="Almustafa"><img src="images/almustafa.jpg" alt=""/></a></li>
+			<li><a target="_blank" class="tooltip" href="https://twitter.com/afroandik" title="M. Abdur Rufi"><img src="images/rufi.jpg" alt=""/></a></li>
+			<li><a class="tooltip" href="/munir" title="Misbahul Munir"><img src="images/munir.jpg" alt=""/></a></li>
+			<li><a target="_blank" class="tooltip" href="https://twitter.com/jtingkir29" title="Fajar Subhi"><img src="images/fajar.jpg" alt=""/></a></li>
+			<li><a class="tooltip" href="/mubin" title="Mubin"><img src="images/mubin.jpg" alt=""/></a></li>
+			<li><a target="_blank" class="tooltip" href="https://twitter.com/zamputrapati" title="M. Zamroni"><img src="images/zamroni.jpg" alt=""/></a></li>
+			<li><a target="_blank" class="tooltip" href="https://twitter.com/zaronja" title="Abda Zaronja"><img src="images/zaronja.jpg" alt=""/></a></li>
+			</ul>
+
+            <br/><p>Contact us during business hours.</p>
+
+<a href="http://time.is/Yogyakarta" id="time_is_link" style="font-size:11px">Time in Yogyakarta now:</a>
+<span id="Yogyakarta_z41c" style="font-size:11px"></span>
+<script src="http://widget.time.is/t.js"></script>
+<script>
+time_is_widget.init({Yogyakarta_z41c:{}});
+</script>
+
+      		<p>Secretariat: Jl. Wahid Hasyim No.3, Gaten Condongcatur Depok Sleman Yogyakarta, Indonesia</p>
+       		<p>Telp / SMS: +62 813 92541 831</p>
+               <p>Website: <a href="http://ekspedisi.github.io" rel="tag">http://ekspedisi.github.io</a></p> 
+       		<p>Twitter: <a href="https://twitter.com/ekspedisicandi" rel="tag">@ekspedisicandi</a></p> 
+
+
+		</div><!--end related-->
+
+
+
+
+		<!--BREADCRUMB LINKS-->
+
+		<div><p id='postAddr'><br />
+            Bahasa: <a title='Get Directions' href='../'>English (Ubah)</a><br /><br />
+				Indonesian Temple Expedition Team<br />
+				<!--GET DIRECTIONS LINK-->
+				<a target='_blank' title='Get Directions' href='../'>ekspedisi.github.io</a>
+			</p>	</div>	
+
+
+
+	</div><!--end post-->
+
+<script type="text/javascript">
+jQuery.noConflict(); jQuery(document).ready(function(){
+	
+	//MAP ZOOM (0 to 20)
+	var zoomLevel = 17,
+		gMap = jQuery("#gMap"),
+		//iPad,iPhone,iPod...
+		deviceAgent = navigator.userAgent.toLowerCase(),
+		iPadiPhone = deviceAgent.match(/(iphone|ipod|ipad)/);
+		
+	//iPad Stuff
+	if (iPadiPhone) {
+		//ADDS MAP CONTROLS
+		jQuery("#footer").append('<div id="mapTypeContainer"><div id="mapStyleContainer" class="gradientBorder"><div id="mapStyle"></div></div><div id="mapType" class="roadmap"></div></div>');	} else {
+		jQuery('#zoomIn').live('click',function(){
+			zoomLevel += 1;
+			gMap.gmap3({action: 'setOptions', args:[{zoom:zoomLevel}]});
+		});
+		jQuery('#zoomOut').live('click',function(){
+			zoomLevel -= 1;
+			gMap.gmap3({action: 'setOptions', args:[{zoom:zoomLevel}]});
+		});
+		//ADDS MAP CONTROLS
+      	jQuery("#footer").append('');
+    } 
+    	
+	jQuery('#gMap').gmap3({
+    	action: 'addMarker',
+    	//LATITUDE AND LONGITUDE OF MARKER - REQUIRED
+    	lat:-7.607873800000000000,
+    	lng:110.203751300000020000,
+    	marker:{
+    		//PIN MARKER IMAGE
+      		options:{icon: new google.maps.MarkerImage('images/pin.png')}
+    	},
+    	map:{
+     	 center: true,
+     	 zoom: zoomLevel
+   		}
+	},{
+		action: 'setOptions', args:[{
+			scrollwheel:false,
+			disableDefaultUI:true,
+			disableDoubleClickZoom:true,
+			draggable:true,
+			mapTypeControl: false,
+			panControl:false,
+			scaleControl:false,
+			streetViewControl:false,
+			zoomControl:false,
+			//MAP TYPE: 'roadmap', 'satellite', 'hybrid'
+			mapTypeId:'hybrid'
+		}]
+	});
+});
+</script>
+
+</div><!--end main-->
+
+
+
+<div id="sidebar">
+<ul>
+<!--WIDGET 1-->
+<li class="widget">
+	<h2 class="widgettitle">Microsoft Visual Studio</h2>			
+	<a href="../">
+		<img src="images/visualstudio.png" alt="Microsoft Visual Studia" />
+	</a>
+</li><!--end widget-->
+
+<!--WIDGET 2-->
+<li class="widget">
+	<h2 class="widgettitle">Google Chrome</h2>
+	<a href="../">
+		<img src="images/chrome.png" alt="Google Chrome" />
+	</a>
+</li><!--end widget-->
+
+<!--WIDGET 3-->
+<li class="widget">
+	<h2 class="widgettitle">CorelDRAW X7</h2>
+	<a href="../">
+		<img src="images/coreldraw.png" alt="Google Chrome" />
+	</a>
+</li><!--end widget-->
+</ul>
+<div class="clear"></div>
+</div><!--end sidebar-->
+
+<div class="clear"></div>
+</div><!--end content-->
+</div><!--end contentContainer-->
+
+
+
+<div id="footer">
+
+	<!--WIDGET PANEL OPEN/CLOSE-->
+	<a href="#" id="widgetsOpen" title="More" class="widgetsToggle">+</a>
+	<a href="#" id="widgetsClose" title="Close" class="widgetsToggle">&times;</a>	
+	
+	<!--SOCIAL BUTTONS-->
+	<div id="socialStuff">
+		<a class="socialicon" id="youtubeIcon" href="../youtube" title="YouTube" rel="nofollow"></a>
+		<a class="socialicon" id="facebookIcon" href="http://www.facebook.com/ekspedisicandi"  title="Facebook" rel="nofollow"></a>
+		<a class="socialicon" id="twitterIcon" href="http://twitter.com/ekspedisicandi" title="Follow on Twitter" rel="nofollow"></a>
+		<!--
+		<a class="socialicon" id="vimeoIcon" href="#" title="Vimeo" rel="nofollow"></a>
+		<a class="socialicon" id="skypeIcon" href="#" title="Skype" rel="nofollow"></a>
+		<a class="socialicon" id="myspaceIcon" href="#" title="MySpace" rel="nofollow"></a>
+		<a class="socialicon" id="flickrIcon" href="#" title="Flickr" rel="nofollow"></a>
+		<a class="socialicon" id="linkedinIcon" href="#" title="LinkedIn" rel="nofollow"></a>
+		<a class="socialicon" id="youtubeIcon" href="#" title="YouTube" rel="nofollow"></a>
+		-->
+	</div>
+		
+	<!--COPYRIGHT NOTICE - IMPORTANT! DO NOT REMOVE GOOGLE NOTICE -->
+	<div id="navigation">
+	Home | <a href="../about">About</a> | <a href="../expeditiontarget">50+ Expedition Target</a> | <a href="../terms">Terms of Service</a> | <a href="../advertise">Advertise</a> | <a href="../shop">Shop</a>
+	</div>	
+	<div id="copyright">
+	&copy; 2014 Indonesian Temple Expedition Team. Website by <a href="http://faridiot.github.io">Ahmad Farid Mubarok</a>
+	</div>	
+	
+</div><!--end footer-->
+
+</body>
+</html>

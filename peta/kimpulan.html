@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="id">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="google-site-verification" content="xgTm6DXW0WWUh9D9GKQNwd2IaO4HEWr9fztqqFnhsOE" />
+<meta name="description" content="Ekspedisi Candi">
+<meta name="keywords" content="Ekspedisi Candi, Indonesia, Sleman, Yogyakarta, Borobudur, Prambanan, Istana Ratu Boko, Banyunibo, Kalasan, Sambisari, Plaosan, Ijo, Petunjuk Arah, Peta, Cuaca, Panorama, Harga Tiket,">
+<meta name="author" content="Tim Ekspedisi candi Indonesia">
+
+<!--BROWSER TITLE-->
+<title>Peta Candi Kimpulan</title>
+
+<!--GOOGLE CUSTOM FONT LINK-->
+<link href='http://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/prettyPhoto.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/twitter.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/octicons.css">
+<link rel="shortcut icon" href="../images/direction.png" />
+
+<!--SCRIPTS-->
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="../js/prettyphoto.js"></script>
+<script type="text/javascript" src="../js/activity.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="../js/gmap3.min.js"></script>
+<script type="text/javascript" src="../js/jquery.backstretch.min.js"></script>
+<script type="text/javascript" src="../js/jquery.animate-colors-min.js"></script>
+<script type="text/javascript" src="../js/custom.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="../js/jquery.countTo.js"></script>
+
+</head>
+
+<body>
+
+<div id="gMap"></div>
+
+<div id="header">
+	<!--NAVIGATION MENU-->
+	<div id="right">
+		
+<!--CURRENT MENU ITEM (class name = current-menu-item)-->
+<span style="font-size:13px">&nbsp;INFO:&nbsp;</span>
+<span class="octicon octicon-clock"></span><a href="http://time.is/Yogyakarta" id="time_is_link" style="font-size:11px">&nbsp;</a>
+<span id="Yogyakarta_z41c" style="font-size:13px"></span>
+<script src="http://widget.time.is/t.js"></script>
+<script>
+time_is_widget.init({Yogyakarta_z41c:{}});
+</script><span style="font-size:15px">Yogyakarta, ID</span>&nbsp; &nbsp;
+
+<span class="octicon octicon-organization"> Visitor</span>
+<span class="timer" style="font-size:13px" id="infinity" data-from="0" data-to="374086" data-speed="900"></span>&nbsp; &nbsp;
+<span class="octicon octicon-dashboard"></span>
+<span style="font-size:13px">&nbsp;Jarak Tempuh Ekspedisi</span>
+<span class="timer" style="font-size:13px" id="gravity" data-from="0" data-to="47.8" data-speed="300000" data-decimals="2"></span>
+<span>km</span>&nbsp; &nbsp;
+<span class="octicon octicon-rocket"></span>
+
+<script type="text/javascript">
+var imgsa = new Array("Menuju Yogyakarta: LODAYA PAGI (08.00 Bandung)","Menuju Yogyakarta: ARGOWILIS (07.30 S.Gubeng)","Menuju Yogyakarta: SENJA UTAMA (20.15 Ps.Senen)");
+var lnksa = new Array("jadwal-kereta","jadwal-kereta","jadwal-kereta");
+var alta = new Array();
+var currentAda = 0;
+var imgCta = 3;
+function cyclea() {
+  if (currentAda == imgCta) {
+    currentAda = 0;
+  }
+document.getElementById('adLinka').innerHTML = imgsa[currentAda];
+  document.getElementById('adLinka').href=lnksa[currentAda]
+  currentAda++;
+}
+  window.setInterval("cyclea()",7000);
+</script>
+<a style="font-size:13px" href="../jadwal-kereta" id="adLinka" target="_top">Menuju Yogyakarta: ARGOLAWU (06.45 Ps. Senen)</a>
+
+  <script type="text/javascript">
+    jQuery(function ($) {
+      // custom formatting example
+      $('#earth').data('countToOptions', {
+        formatter: function (value, options) {
+          return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+        }
+      });
+      
+      // custom callback when counting completes
+      $('#countdown').data('countToOptions', {
+        onComplete: function (value) {
+          $(this).text('BLAST OFF!').addClass('red');
+        }
+      });
+      
+      // another custom callback for counting to infinity
+      $('#infinity').data('countToOptions', {
+        onComplete: function (value) {
+          count.call(this, {
+            from: value,
+            to: value + 1
+          });
+        }
+      });
+      
+      // start all the timers
+      $('.timer').each(count);
+      
+      // restart a timer when a button is clicked
+      $('.restart').click(function (event) {
+        event.preventDefault();
+        var target = $(this).data('target');
+        count.call($(target));
+      });
+      
+      function count(options) {
+        var $this = $(this);
+        options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+        $this.countTo(options);
+      }
+    });
+  </script>
+
+ 	</div>
+
+</div><!--end header-->	
+
+<div id="loading"></div>
+
+<div id="contentContainer">
+	<div id="content">
+	
+	<script type="text/javascript">
+	//<![CDATA[
+	jQuery.noConflict(); jQuery(document).ready(function(){  
+    	//MAP ZOOM (0 to 20)
+    	var zoomLevel = 17,
+		gMap = jQuery("#gMap"),
+		//iPad,iPhone,iPod...
+		deviceAgent = navigator.userAgent.toLowerCase(),
+		iPadiPhone = deviceAgent.match(/(iphone|ipod|ipad)/);
+		
+	//iPad Stuff
+	if (iPadiPhone) {
+		//ADD MAP CONTROLS AND POST ARROWS
+		jQuery("#footer").prepend('<div class="markerNav" title="" id="prevMarker"></div><div id="markers"></div><div class="markerNav" title="" id="nextMarker"></div><div id="mapTypeContainer"><div id="mapStyleContainer"><div id="mapStyle" class="satellite"></div></div><div id="mapType" title="Map Type" class="satellite"></div></div>');
+	} else {//IF NOT iPad
+		jQuery('#zoomIn').live('click',function(){
+			zoomLevel += 1;
+			gMap.gmap3({action: 'setOptions', args:[{zoom:zoomLevel}]});
+		});
+		jQuery('#zoomOut').live('click',function(){
+			zoomLevel -= 1;
+			gMap.gmap3({action: 'setOptions', args:[{zoom:zoomLevel}]});
+		});
+		//ADD MAP CONTROLS AND POST ARROWS
+      	jQuery("#footer").prepend('<div class="markerNav" title="" id="prevMarker"></div><div id="markers"></div><div class="markerNav" title="" id="nextMarker"></div><div id="mapTypeContainer"><div id="mapStyleContainer"><div id="mapStyle" class="satellite"></div></div><div id="mapType" title="Map Type" class="satellite"></div></div>');
+    }    
+        jQuery('body').prepend("<div id='target'></div>");
+        
+        gMap.gmap3({ 
+        	action: 'init',
+            onces: {
+              bounds_changed: function(){
+              	var number = 0;
+                jQuery(this).gmap3({
+                  action:'getBounds', 
+                  callback: function (){
+//ADD MARKERS HERE - FORMAT IS AS FOLLOWS...
+//add(jQuery(this), number += 1, "NAME", "URL","ADDRESS1<br />ADDRESS2","LATITUDE","LONGITUDE", 'THUMBNAIL');
+
+add(jQuery(this), number += 1, "Candi Kimpulan", "../candi/kimpulan","Sleman, Yogyakarta, Indonesia <br/><br/> Candi Kimpulan adalah candi Hindu dan diperkirakan dibangun sekitar abad ke-9 atau masa Mataram Kuno.","-7.688380","110.415379", '<img width="95" height="95" src="../images/kimpulan-95x95.jpg" alt="" />'); 
+
+                  }
+                });
+              }
+            }
+          },{ 
+			action: 'setOptions', args:[{
+				zoom:zoomLevel,
+				scrollwheel:true,
+				disableDefaultUI:true,
+				disableDoubleClickZoom:true,
+				draggable:true,
+				mapTypeControl:false,
+				panControl:false,
+				scaleControl:false,
+				streetViewControl:false,
+				zoomControl:false,
+				//MAP TYPE: 'roadmap', 'satellite', 'hybrid'
+				mapTypeId:'hybrid'
+			}]
+		});
+        function add(jQuerythis, i, title, link, excerpt, lati, longi, img){
+          jQuerythis.gmap3({
+            action : 'addMarker',
+            lat:lati,
+            lng:longi,
+            //PIN MARKER IMAGE
+            options: {icon: new google.maps.MarkerImage('../images/pin.png')},
+            events:{
+       			mouseover: function(marker){
+          			jQuerythis.css({cursor:'pointer'});
+          			jQuery('#markerTitle'+i+'').fadeIn({ duration: 200, queue: false }).animate({bottom:"32px"},{duration:200,queue:false});
+          			jQuery('.markerInfo').removeClass('activeInfo').hide();
+          			jQuery('#markerInfo'+i+'').addClass('activeInfo').show();
+          			jQuery('.marker').removeClass('activeMarker');
+          			jQuery('#marker'+i+'').addClass('activeMarker');
+      			},
+       			mouseout: function(){
+          			jQuerythis.css({cursor:'default'});
+          			jQuery('#markerTitle'+i+'').stop(true,true).fadeOut(200,function(){jQuery(this).css({bottom:"0"})});
+      			},
+      			click: function(marker){window.location = link}
+   			},
+            callback: function(marker){
+              var jQuerybutton = jQuery('<div id="marker'+i+'" class="marker"><div id="markerInfo'+i+'" class="markerInfo"><a href="'+link+'">'+img+'</a><h2><a href="'+link+'">'+title+'</a></h2><p>'+excerpt+'</p><a class="markerLink" href="'+link+'">Selengkapnya &rarr;</a></div></div>');
+              jQuerybutton.mouseover(function(){
+                  jQuerythis.gmap3({
+                    action:'panTo', 
+                    args:[marker.position]
+                  });
+                  jQuery("#target").stop(true,true).fadeIn(1200).delay(500).fadeOut(1200);
+               });
+              jQuery('#markers').append(jQuerybutton);
+              var numbers = jQuery(".markerInfo").length;
+              jQuery(".markerTotal span").html(numbers);
+              if(i == 1){
+              	jQuery('.marker:first-child').addClass('activeMarker').mouseover();
+              }
+              jQuerythis.gmap3({
+              	action:'addOverlay',
+              	content: '<div id="markerTitle'+i+'" class="markerTitle">'+title+'</div>',
+              	latLng: marker.getPosition()
+               });
+            }    		
+          });
+        }
+});
+//]]>
+</script>
+
+<div id="sidebar">
+<ul>
+<!--WIDGET 1-->
+<li class="widget">
+    <img src="../images/direction-white.png" width="50%" align="left" />
+    <a href="../tentang">&nbsp;Tentang</a><br/>
+    <a href="../targetekspedisi">&nbsp;Target Ekspedisi</a><br/>
+    <a href="../advertise">&nbsp;Advertise</a><br/>
+    <a href="../logo">&nbsp;Logo</a><br/>
+    <a href="../english">&nbsp;English Version</a><br/>
+    <a href="../persyaratan">&nbsp;Persyaratan Layanan</a><br/>
+    <a href="../petasitus">&nbsp;Peta Situs</a><br/>
+    <a href="../shop">&nbsp;Shop</a><br/>
+</li><!--end widget-->
+
+<!--WIDGET 2-->
+<li class="widget">	
+	<a href="http://wanita.ekspedisicandi.com">
+		<img src="../images/wanita.jpg" width="100%" alt="&nbsp;wanita.ekspedisicandi.com" align="left"/>
+	</a>
+    <p align="left">&nbsp;wanita.ekspedisicandi.com</p>	
+</li><!--end widget-->
+
+<!--WIDGET 3-->
+<li class="widget">
+	<a href="http://relief.ekspedisicandi.com">
+		<img src="../images/relief.jpg" width="50%" align="left" alt="&nbsp;relief" />	
+	</a>
+
+</li><!--end widget-->
+</ul>
+<div class="clear"></div>
+</div><!--end sidebar-->
+
+<div class="clear"></div>
+</div><!--end content-->
+</div><!--end contentContainer-->
+
+<div id="indonesia"><a href="http://tour.ekspedisicandi.com"><img src="../images/wonderful-indonesia.png" width="130px" /></a></div>
+<div id="pakettour"><a href="http://tour.ekspedisicandi.com"><img src="../images/pakettour.png" width="150px" /></a></div>
+<div id="compass"><a href="http://tour.ekspedisicandi.com"><img src="../images/compass.gif" width="100px" /></a></div>
+<div id="facebook"><a href="http://www.facebook.com/ekspedisicandi"><img src="../images/facebook.png" width="120px" /></a></div>
+<div id="twitter"><a href="http://twitter.com/ekspedisicandi"><img src="../images/twitter.png" width="90px" /></a></div>
+
+<div id="footer">
+
+	<!--WIDGET PANEL OPEN/CLOSE-->
+	<a href="#" id="widgetsOpen" title="More" class="widgetsToggle">+</a>
+	<a href="#" id="widgetsClose" title="Close" class="widgetsToggle">&times;</a>	
+	
+	<!--SOCIAL BUTTONS-->
+	<div id="socialStuff">
+		<a class="socialicon" id="youtubeIcon" href="../youtube" title="YouTube" rel="nofollow"></a>
+		<a class="socialicon" id="facebookIcon" href="http://www.facebook.com/ekspedisicandi"  title="Facebook" rel="nofollow"></a>
+		<a class="socialicon" id="twitterIcon" href="http://twitter.com/ekspedisicandi" title="Follow on Twitter" rel="nofollow"></a>
+		<!--
+		<a class="socialicon" id="vimeoIcon" href="#" title="Vimeo" rel="nofollow"></a>
+		<a class="socialicon" id="skypeIcon" href="#" title="Skype" rel="nofollow"></a>
+		<a class="socialicon" id="myspaceIcon" href="#" title="MySpace" rel="nofollow"></a>
+		<a class="socialicon" id="flickrIcon" href="#" title="Flickr" rel="nofollow"></a>
+		<a class="socialicon" id="linkedinIcon" href="#" title="LinkedIn" rel="nofollow"></a>
+		<a class="socialicon" id="youtubeIcon" href="#" title="YouTube" rel="nofollow"></a>
+		-->
+	</div>
+		
+	<!--COPYRIGHT NOTICE - IMPORTANT! DO NOT REMOVE GOOGLE NOTICE -->
+	<div id="navigation">
+	&nbsp;<a href="../"> <span class="octicon octicon-home"></span> Beranda</a> &nbsp; &nbsp; <a href="../targetekspedisi"> <span class="octicon octicon-location"></span> 50+ Target Ekspedisi</a> &nbsp; &nbsp; <a href="../arah/prambanan-kimpulan"> <span class="octicon octicon-milestone"></span> Petunjuk Arah ke Candi Kimpulan</a>
+	</div>	
+	<div id="copyright">
+	&copy; 2014 <a href="https://plus.google.com/105314275349373222681?rel=author">Tim Ekspedisi Candi Indonesia</a>. Code by <a href="http://twitter.com/faridiot">@faridiot</a>
+	</div>	
+	
+</div><!--end footer-->
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54270997-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

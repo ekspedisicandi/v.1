@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+<link rel="shortcut icon" href="../images/direction.png" />
+  <title>Ekspedisi Candi</title>
+
+  <style>
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+</style>
+
+    <style>
+@import url(http://fonts.googleapis.com/css?family=Gafata);
+html, body, #map-canvas {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Gafata', sans-serif;
+  font-weight: bold;
+}
+
+#panel {
+  position: absolute;
+  top: 10px;
+  left: 100px;
+  z-index: 5;
+  padding: 10px;
+}
+        
+#start {
+  border: 0;
+  width: 0px;
+}
+#end {
+  border: 0;
+  width: 0px;
+}
+
+</style>
+
+    <script src="js/prefixfree.min.js"></script>
+
+    <script src="js/modernizr.js"></script>
+
+</head>
+
+<body>
+
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+<body>
+    <div id="panel">
+    <img src="../images/direction.png" width="50%">
+    <form>
+        <label>Petunjuk arah dari Prambanan</label>
+        <input id="start" value="-7.752023200000000000,110.491368800000030000" type="text">
+        <label>ke Candi Gana</label>
+        <input id="end" value="-7.743978,110.496143" type="text"><br/>
+        <input type="button" value="Lihat Petunjuk Arah" onclick="calcRoute();">
+    </form>
+    <br/><a href="yogyakarta-prambanan">Dari Yogyakarta</a>
+    <br/><a href="pencarian">Pencarian</a>
+    </div>
+    <div id="map-canvas"></div>
+
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>
